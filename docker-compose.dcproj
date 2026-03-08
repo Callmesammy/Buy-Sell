@@ -15,6 +15,16 @@
     <None Include="Dockerfile" />
     <None Include="DOCKER_SETUP.md" />
     <None Include="Infrastructure\Persistence\ApplicationDbContext.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\CartConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\CartItemConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\CategoryConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\OrderConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\OrderItemConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\ProductConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\ProductViewConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\ReviewConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\StoreConfiguration.cs" />
+    <None Include="Infrastructure\Persistence\EntityConfigurations\UserConfiguration.cs" />
     <None Include="Infrastructure\Repositories\BaseRepository.cs" />
     <None Include="Infrastructure\Repositories\CartRepository.cs" />
     <None Include="Infrastructure\Repositories\CategoryRepository.cs" />
@@ -24,8 +34,11 @@
     <None Include="Infrastructure\Repositories\ReviewRepository.cs" />
     <None Include="Infrastructure\Repositories\StoreRepository.cs" />
     <None Include="Infrastructure\Repositories\UserRepository.cs" />
+    <None Include="MIGRATION_GUIDE.md" />
+    <None Include="PHASE2_VALIDATORS.md" />
     <None Include="PROJECT_STRUCTURE.md" />
     <None Include="README.md" />
+    <None Include="SESSION_SUMMARY.md" />
     <None Include="SUMMARY.md" />
   </ItemGroup>
 </Project>

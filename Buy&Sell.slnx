@@ -4,7 +4,6 @@
     <Project Path="Buy&amp;Sell/Buy&amp;Sell.csproj" />
     <Project Path="Domain/Domain.csproj" />
     <Project Path="Infastructure/Infastructure.csproj" />
-    <Project Path="Shardkarnel/Shardkarnel.csproj" />
     <Project Path="TestBuy&amp;Sell/TestBuy&amp;Sell.csproj" />
   </Folder>
   <Folder Name="/Src/_ProjectGuid/">
