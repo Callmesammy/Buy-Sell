@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # SQL Server container
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: buysell-sqlserver
+    environment:
+      SA_PASSWORD: "YourStrong@Password123"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - buysell-network
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "YourStrong@Password123" -Q "SELECT 1" -o /dev/null
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  # API container
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: buysell-api
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Initial Catalog=BuySellDb;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True;"
+      Jwt__Secret: "your-super-secret-jwt-key-min-32-chars-long-here"
+      Jwt__ExpiryMinutes: "60"
+      Stripe__SecretKey: "${STRIPE_SECRET_KEY}"
+      Stripe__WebhookSecret: "${STRIPE_WEBHOOK_SECRET}"
+      AzureBlob__ConnectionString: "${AZURE_BLOB_CONNECTION_STRING}"
+      AzureBlob__ContainerName: "products"
+      AI__ApiKey: "${AI_API_KEY}"
+      AI__Model: "claude-sonnet-4-20250514"
+    ports:
+      - "8080:8080"
+    networks:
+      - buysell-network
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
+
+networks:
+  buysell-network:
+    driver: bridge

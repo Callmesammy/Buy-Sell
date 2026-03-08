@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Src/">
+    <Project Path="Application/Application.csproj" />
+    <Project Path="Buy&amp;Sell/Buy&amp;Sell.csproj" />
+    <Project Path="Domain/Domain.csproj" />
+    <Project Path="Infastructure/Infastructure.csproj" />
+    <Project Path="Shardkarnel/Shardkarnel.csproj" />
+    <Project Path="TestBuy&amp;Sell/TestBuy&amp;Sell.csproj" />
+  </Folder>
+  <Folder Name="/Src/_ProjectGuid/">
+    <File Path="CLUDE.md" />
+    <File Path="FEATURES.md" />
+    <File Path="PLAN.md" />
+  </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+</Solution>

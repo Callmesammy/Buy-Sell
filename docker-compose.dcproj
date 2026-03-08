@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>81dded9d-158b-e303-5f62-77a2896d2a5a</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".env.example" />
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+    <None Include="Dockerfile" />
+    <None Include="DOCKER_SETUP.md" />
+    <None Include="Infrastructure\Persistence\ApplicationDbContext.cs" />
+    <None Include="Infrastructure\Repositories\BaseRepository.cs" />
+    <None Include="Infrastructure\Repositories\CartRepository.cs" />
+    <None Include="Infrastructure\Repositories\CategoryRepository.cs" />
+    <None Include="Infrastructure\Repositories\OrderRepository.cs" />
+    <None Include="Infrastructure\Repositories\ProductRepository.cs" />
+    <None Include="Infrastructure\Repositories\ProductViewRepository.cs" />
+    <None Include="Infrastructure\Repositories\ReviewRepository.cs" />
+    <None Include="Infrastructure\Repositories\StoreRepository.cs" />
+    <None Include="Infrastructure\Repositories\UserRepository.cs" />
+    <None Include="PROJECT_STRUCTURE.md" />
+    <None Include="README.md" />
+    <None Include="SUMMARY.md" />
+  </ItemGroup>
+</Project>
