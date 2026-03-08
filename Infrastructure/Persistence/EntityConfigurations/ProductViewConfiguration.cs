@@ -54,7 +54,7 @@ public class ProductViewConfiguration : IEntityTypeConfiguration<ProductView>
         builder.HasOne(pv => pv.User)
             .WithMany()
             .HasForeignKey(pv => pv.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
 
         builder.ToTable("ProductViews");
     }

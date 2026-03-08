@@ -53,7 +53,7 @@ public class CartItemConfiguration : IEntityTypeConfiguration<CartItem>
         builder.HasOne(ci => ci.Product)
             .WithMany()
             .HasForeignKey(ci => ci.ProductId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
 
         builder.ToTable("CartItems");
     }
