@@ -11,7 +11,7 @@ public class ReviewRepository : BaseRepository<Review>, IReviewRepository
 {
     public ReviewRepository(Infrastructure.Persistence.ApplicationDbContext context) : base(context) { }
 
-    public async Task<List<Review>> GetByProductIdAsync(Guid productId, CancellationToken ct = default)
+    public async Task<List<Domain.Entities.Review>> GetByProductIdAsync(Guid productId, CancellationToken ct = default)
     {
         return await Context.Reviews.AsNoTracking()
             .Where(r => r.ProductId == productId && !r.IsDeleted)
@@ -20,7 +20,7 @@ public class ReviewRepository : BaseRepository<Review>, IReviewRepository
             .ToListAsync(ct);
     }
 
-    public async Task<List<Review>> GetByBuyerIdAsync(Guid buyerId, CancellationToken ct = default)
+    public async Task<List<Domain.Entities.Review>> GetByBuyerIdAsync(Guid buyerId, CancellationToken ct = default)
     {
         return await Context.Reviews.AsNoTracking()
             .Where(r => r.BuyerId == buyerId && !r.IsDeleted)
@@ -29,7 +29,7 @@ public class ReviewRepository : BaseRepository<Review>, IReviewRepository
             .ToListAsync(ct);
     }
 
-    public async Task<Review?> GetReviewAsync(Guid productId, Guid buyerId, CancellationToken ct = default)
+    public async Task<Domain.Entities.Review?> GetReviewAsync(Guid productId, Guid buyerId, CancellationToken ct = default)
     {
         return await Context.Reviews.AsNoTracking()
             .Include(r => r.Product)
