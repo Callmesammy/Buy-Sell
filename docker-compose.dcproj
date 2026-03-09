@@ -7,6 +7,17 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include=".env.example" />
+    <None Include=".github\CI-CD_COMPLETE_SUMMARY.md" />
+    <None Include=".github\CI-CD_DEPLOYMENT_CHECKLIST.md" />
+    <None Include=".github\CI-CD_GETTING_STARTED.md" />
+    <None Include=".github\CI-CD_INTEGRATION_GUIDE.md" />
+    <None Include=".github\CI-CD_SETUP.md" />
+    <None Include=".github\CI-CD_SUMMARY.md" />
+    <None Include=".github\CI-CD_VISUAL_QUICK_START.md" />
+    <None Include=".github\DEPLOYMENT_READY.md" />
+    <None Include=".github\README.md" />
+    <None Include=".github\README_INTEGRATION.md" />
+    <None Include=".github\workflows\ci-cd.yml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
