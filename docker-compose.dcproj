@@ -17,6 +17,7 @@
     <None Include=".github\DEPLOYMENT_READY.md" />
     <None Include=".github\README.md" />
     <None Include=".github\README_INTEGRATION.md" />
+    <None Include=".github\README_UPDATED.md" />
     <None Include=".github\workflows\ci-cd.yml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
